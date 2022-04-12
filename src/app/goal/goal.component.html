@@ -1,5 +1,6 @@
 <div class="container-fluid">
-  <h3 class="text-warning">My First Angular Project on my Core Module Goals</h3>
+  <ng-progress></ng-progress>
+  <h3 class="text-warning">What are you goals ? These are my Core Module Goals</h3>
   <hr>
   <!-- <ul>
     <li style="list-style-type:none" *ngFor="let goal of goals">{{goal.id}} . {{goal.name}}
@@ -25,7 +26,8 @@
       <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
     </div>
   </div>
-  <p *ngIf='goals.length > 5'>You have too many goals</p>
+  <p class="lead text-center mt-4">Computing Quotes</p>
+  <!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
   <div class="row">
     <blockquote class="blockquote text-center">
       <p class="mb-3">{{quote.quote}}</p>

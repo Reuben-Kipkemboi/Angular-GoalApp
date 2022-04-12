@@ -4,6 +4,8 @@ import { AlertService } from '../alert-service/alert.service';
 import { Goal } from '../goal';
 import { GoalService } from '../goal-service/goal.service';
 import { Quote } from '../quote-class/quote';
+
+import { QuoteRequestService } from '../quote-http/quote-request.service';
 @Component({
   selector: 'app-goal',
   templateUrl: './goal.component.html',
@@ -40,7 +42,7 @@ export class GoalComponent implements OnInit {
     }
   }
 
-  constructor(goalService: GoalService, alertService: AlertService, private http: HttpClient) {
+  constructor(goalService: GoalService, alertService: AlertService, private http: HttpClient, private quoteService:QuoteRequestService) {
     this.goals = goalService.getGoals()
     this.alertService = alertService;
   }
@@ -57,6 +59,8 @@ export class GoalComponent implements OnInit {
       author: string;
       quote: string;
     }
+    this.quoteService.quoteRequest()
+    this.quote = this.quoteService.quote
   }
 }
 
